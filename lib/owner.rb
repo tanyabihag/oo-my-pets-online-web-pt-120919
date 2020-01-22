@@ -21,4 +21,16 @@ def self.count
 end
 
 def self.reset_all
-  s
+  @@all = []
+end 
+
+end
+  
+  
+  
+  
+  
+  
+  
+  
+  
