@@ -27,7 +27,13 @@ end
 def cats 
   Cats.all.select {|cat| cat.Owner == self}
 end
+
+def dogs
+  Dogs.all.select {|dog| dog.Owner == self}
 end
+
+def buy_cat
+  
   
   
   
