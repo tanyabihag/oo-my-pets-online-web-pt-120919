@@ -17,4 +17,8 @@ def self.all
 end
 
 def self.count
-  
+  @@all.legnth
+end
+
+def self.reset_all
+  self.reset
