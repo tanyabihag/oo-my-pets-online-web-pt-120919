@@ -41,7 +41,7 @@ def buy_dogs(name)
 end 
 
 def walk_dogs
-  
+  Dog.all.each {|dog| dog.mood = "happy" if dog.owner == self}
   
   
   
