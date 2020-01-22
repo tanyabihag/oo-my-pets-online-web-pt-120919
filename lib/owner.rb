@@ -34,6 +34,14 @@ end
 
 def buy_cat(name)
   Cat.new(name, self)
+end
+
+def buy_dogs(name)
+  Dog.new(name, self)
+end 
+
+def walk_dogs
+  
   
   
   
