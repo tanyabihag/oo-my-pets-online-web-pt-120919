@@ -49,8 +49,22 @@ def feed_cats
 end
 
 def sell_pets
-  Dog.all.each do 
-    
+  Dog.all.each do |dog|
+    if dog.owner == self 
+      dog.mood == "nervous"
+      dog.owner == nil 
+    end
+  end
+  
+  Cat.all.each do |cat|
+    if cat.owner == self
+      cat.mood == "nervous"
+      cat.owner == nil 
+    end
+  end
+end
+
+
 
 
 
