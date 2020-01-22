@@ -49,7 +49,8 @@ def feed_cats
 end
 
 def sell_pets
-  
+  Dog.all.each do 
+    
 
 
 
