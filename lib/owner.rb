@@ -1,74 +1,76 @@
 class Owner
-attr_reader :name, :species
-@@all = []
+  # code goes here
+  attr_reader :name, :species
 
-def initialize(name, species)
-  @name = name 
-  @species = "human"
-  @@all << self
-end
-
-def say_species
-  puts "I am a #{self.species}"
-end
-
-def self.all
-  @@all
-end
-
-def self.count
-  @@all.legnth
-end
-
-def self.reset_all
   @@all = []
-end 
 
-def cats 
-  Cats.all.select {|cat| cat.Owner == self}
-end
+  def initialize(name)
+    @name = name
+    @species = 'human'
+    @@all << self
+  end
 
-def dogs
-  Dogs.all.select {|dog| dog.Owner == self}
-end
+  def say_species
+    "I am a #{self.species}."
+  end
 
-def buy_cat(name)
-  Cat.new(name, self)
-end
+  def self.all
+    @@all
+  end
 
-def buy_dogs(name)
-  Dog.new(name, self)
-end 
+  def self.count
+    @@all.length
+  end
 
-def walk_dogs
-  Dog.all.each {|dog| dog.mood = "happy" if dog.owner == self}
-end
+  def self.reset_all
+    @@all = []
+  end
 
-def feed_cats
-  Cat.all.each {|cat| cat.mood = "happy" if dog.owner == self}
-end
+  def cats
+    Cat.all.select {|cat| cat.owner == self }
+  end
 
-def sell_pets
-  Dog.all.each do |dog|
-    if dog.owner == self 
-      dog.mood == "nervous"
-      dog.owner == nil 
+  def dogs
+    Dog.all.select {|dog| dog.owner == self }
+  end
+
+  def buy_cat(name)
+    Cat.new(name, self)
+  end
+
+  def buy_dog(name)
+    Dog.new(name, self)
+  end
+
+  def walk_dogs
+    Dog.all.each { |dog| dog.mood = 'happy' if dog.owner == self }
+  end
+
+  def feed_cats
+    Cat.all.each { |cat| cat.mood = 'happy' if cat.owner == self }
+  end
+
+  def sell_pets
+    Dog.all.each do |dog| 
+      if dog.owner == self 
+        dog.mood = 'nervous'
+        dog.owner = nil
+      end
+    end
+
+    Cat.all.each do |cat|
+      if cat.owner == self
+        cat.mood = 'nervous'
+        cat.owner = nil
+      end
     end
   end
-  
-  Cat.all.each do |cat|
-    if cat.owner == self
-      cat.mood == "nervous"
-      cat.owner == nil 
-    end
+
+  def list_pets
+    "I have #{self.dogs.length} dog(s), and #{self.cats.length} cat(s)."
   end
-end
 
-def list_pets
-  "I have #{self.dog.legnth} dogs and #{self.cat.legnth} cats."
-end
-
-end
+end 
 
 
 
