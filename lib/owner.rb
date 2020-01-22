@@ -65,7 +65,10 @@ def sell_pets
 end
 
 def list_pets
-  "I have #{self.dog.legnth} dogs and #{self.cat.legnth} cats"
+  "I have #{self.dog.legnth} dogs and #{self.cat.legnth} cats."
+end
+
+end
 
 
 
